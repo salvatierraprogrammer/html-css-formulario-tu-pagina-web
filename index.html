@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario de Diseño Web</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    :root {
+      --color-primario: #1976d2;
+      --color-secundario: #125a9c;
+      --color-fondo: #f2f4f8;
+      --color-texto: #333;
+      --color-input: #fff;
+      --color-borde: #ccc;
+      --color-focus: #1976d2;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--color-fondo);
+      color: var(--color-texto);
+      margin: 0;
+      padding: 30px;
+    }
+
+    .formulario, .tarjeta {
+      max-width: 700px;
+      margin: 20px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 28px;
+      color: var(--color-primario);
+    }
+
+    .separador {
+      width: 60px;
+      height: 4px;
+      background: var(--color-primario);
+      margin: 10px auto 30px;
+      border-radius: 2px;
+    }
+
+    label {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 20px 0 8px;
+      font-size: 15px;
+    }
+
+    label i {
+      color: var(--color-primario);
+      font-size: 16px;
+      min-width: 18px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1.5px solid var(--color-borde);
+      box-sizing: border-box;
+      background: var(--color-input);
+      transition: border 0.3s, box-shadow 0.3s;
+      font-size: 14px;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--color-focus);
+      box-shadow: 0 0 5px rgba(25, 118, 210, 0.3);
+      outline: none;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 15px 20px;
+      background-color: var(--color-primario);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    button:hover {
+      background-color: var(--color-secundario);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(25, 118, 210, 0.3);
+    }
+
+    /* tarjeta de trabajos */
+    .tarjeta img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .tarjeta h3 {
+      margin-top: 0;
+      color: var(--color-primario);
+    }
+
+    .tarjeta p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .tarjeta a {
+      display: inline-block;
+      margin-top: 15px;
+      background: var(--color-primario);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .tarjeta a:hover {
+      background: var(--color-secundario);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="formulario">
+    <h2>Formulario para tu Web</h2>
+    <div class="separador"></div>
+    <form id="formularioWeb">
+      <label><i class="fa-solid fa-signature"></i>Nombre o marca:</label>
+      <input type="text" name="nombreMarca" placeholder="Ej: Catálogo Ángel" required />
+
+      <label><i class="fa-solid fa-briefcase"></i>Rubro o actividad:</label>
+      <input type="text" name="rubro" placeholder="Ej: Indumentaria, servicios médicos, etc." />
+
+      <label><i class="fa-solid fa-palette"></i>¿Querés un logo?</label>
+      <select name="logo">
+        <option value="Sí">Sí, necesito uno</option>
+        <option value="No">No, solo texto</option>
+      </select>
+
+      <label><i class="fa-solid fa-paint-brush"></i>Estilo que te gusta:</label>
+      <textarea name="estilo" rows="2" placeholder="Ej: Colores oscuros, moderno, minimalista..."></textarea>
+
+      <label><i class="fa-solid fa-globe"></i>Referencias de páginas que te gustan:</label>
+      <textarea name="referencias" rows="2" placeholder="Links o nombres de sitios"></textarea>
+
+      <label><i class="fa-solid fa-list-ol"></i>¿Cuántos productos querés mostrar?</label>
+      <input type="number" name="cantidadProductos" min="1" />
+
+      <label><i class="fa-solid fa-box-open"></i>¿Qué querés que tenga cada producto?</label>
+      <select name="contenidoProducto">
+        <option value="Imagen + Nombre">Imagen + Nombre</option>
+        <option value="Imagen + Nombre + Precio">Imagen + Nombre + Precio</option>
+        <option value="Todo">Imagen + Nombre + Precio + Descripción</option>
+      </select>
+
+      <label><i class="fa-solid fa-file-upload"></i>¿Cómo me vas a pasar las imágenes?</label>
+      <input type="text" name="imagenes" placeholder="WhatsApp, Drive, Email..." />
+
+      <label><i class="fa-solid fa-key"></i>Clave de acceso:</label>
+      <input type="text" name="clave" placeholder="Ej: angel2025" />
+
+      <label><i class="fa-brands fa-whatsapp"></i>¿Querés botón de WhatsApp para contacto?</label>
+      <select name="whatsapp">
+        <option value="Sí">Sí</option>
+        <option value="No">No</option>
+      </select>
+
+      <label><i class="fa-solid fa-phone"></i>Tu número de WhatsApp (opcional):</label>
+      <input type="text" name="numeroWhatsapp" placeholder="Ej: 11 3103 4391" />
+
+      <label><i class="fa-solid fa-server"></i>¿Querés subir la web a un dominio propio?</label>
+      <select name="dominio">
+        <option value="Dominio gratuito">No, dominio gratuito</option>
+        <option value="Dominio propio">Sí, algo como www.miweb.com</option>
+      </select>
+
+      <label><i class="fa-solid fa-dollar-sign"></i>Presupuesto estimado:</label>
+      <input type="text" name="presupuesto" placeholder="Ej: $50.000 - $100.000" />
+
+      <label><i class="fa-solid fa-comment-dots"></i>Comentarios adicionales:</label>
+      <textarea name="comentarios" rows="3" placeholder="Cualquier otra cosa que quieras agregar..."></textarea>
+
+      <button type="submit"><i class="fa-brands fa-whatsapp"></i>Enviar por WhatsApp</button>
+    </form>
+  </div>
+
+  <div class="tarjeta">
+
+    <h3>Mis Trabajos Recientes</h3>
+    <p>Diseños modernos, responsivos y pensados para convertir visitas en clientes. Mirá algunos ejemplos de páginas que realicé para diferentes rubros.</p>
+    <a href="https://salvatierra-diego-portafolio.netlify.app/" target="_blank">Ver Portafolio</a>
+  </div>
+
+  <script>
+    document.getElementById("formularioWeb").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const datos = new FormData(this);
+      let mensaje = "*Nuevo proyecto de diseño web*%0A";
+      for (const [key, value] of datos.entries()) {
+        if (value.trim() !== "") {
+          mensaje += `*${key.replace(/([A-Z])/g, ' $1').toUpperCase()}:* ${value}%0A`;
+        }
+      }
+      const numero = "5491132752125";
+      const url = `https://wa.me/${numero}?text=${mensaje}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
